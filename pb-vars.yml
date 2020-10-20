@@ -1,0 +1,7 @@
+---
+- hosts: pwd
+  vars:
+    package: vim 
+  tasks:
+    - name: Install Package
+      apt: name={{ package }} state=latest

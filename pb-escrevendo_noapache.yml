@@ -1,0 +1,13 @@
+---
+
+- name: 1 - Criando servidores web
+  hosts: webservers
+
+  tasks:
+    # task 1
+    - name: garantiar que o Apache esteja na última versão
+      package: name=httpd state=latest
+    # task 2
+    - name: conter a linha '127.0.0.1 teste' no arquivo /etc/hosts
+      lineinfile: path=/etc/hosts line='127.0.0.1 teste' state=present
+

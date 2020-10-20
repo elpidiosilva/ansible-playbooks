@@ -1,0 +1,16 @@
+---
+- name: instala servidores web
+  hosts: pwd
+  remote_user: root
+
+  tasks:
+  - name: garantir ultima versao do apache
+    apk:
+      name: lighttpd
+      state: latest
+      update_cache: yes
+
+  - name: garantir ultima versao do nginx
+    apk:
+      name: nginx
+      state: latest

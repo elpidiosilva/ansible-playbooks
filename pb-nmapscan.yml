@@ -1,0 +1,16 @@
+---
+- hosts: all 
+  tasks:
+  - name: Install packages
+    apk:
+      name:
+      - nmap
+      state: latest
+  - name: Scan host using nmap
+    shell: nmap "{{ ip_var }}"
+    register: out 
+
+  - debug: var=out.stdout_lines
+
+#apos isso, chamar via linha de comando
+#ansible-playbook --extra-vars "ip_var=10.1.1.3" linux-scan.yml

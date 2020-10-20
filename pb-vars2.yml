@@ -1,0 +1,8 @@
+---
+- hosts: all
+  
+  tasks:
+     - name: Install Package
+       apk: 
+         name: [ 'git', 'nano', 'curl', 'busybox-extras' ] 
+         state: latest

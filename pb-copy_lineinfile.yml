@@ -1,0 +1,16 @@
+---
+- name: Copy files
+  hosts: pwd 
+  tasks:
+    - name: Copy file
+      copy:
+        src: /root/copytest.txt
+        dest: /root/copytest.txt
+        #remote_src: yes
+
+    - name: adicionando linha
+      lineinfile:
+        path: /root/copytest.txt
+        regexp: '^Listen'
+        insertafter: '^Outro\ listen'
+        line: Listeninho

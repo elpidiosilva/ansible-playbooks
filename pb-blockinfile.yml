@@ -1,0 +1,11 @@
+---
+- name: Adicionando bloco de texto
+  hosts: pwd 
+  tasks:
+    - name: adicionando confs de rede
+      blockinfile:
+        path: /root/copytest.txt
+        block: |
+          iface eth0 inet static
+              address 192.0.2.23
+              netmask 255.255.255.0
