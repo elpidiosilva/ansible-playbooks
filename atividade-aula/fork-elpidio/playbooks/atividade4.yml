@@ -1,0 +1,17 @@
+---
+
+- hosts: pwd
+
+  tasks:
+  - name: "Cria um arquivo com modo personalizado nos hosts manipulados"
+    file:
+       path: /root/otherfile.txt
+       state: touch
+       mode: "0644"
+
+  - name: "Cria um diretorio com modo personalizado nos hosts manipulados"
+    file:
+       path: /root/somedir
+       state: directory
+       mode: "0755"
+
