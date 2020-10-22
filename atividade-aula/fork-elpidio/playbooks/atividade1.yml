@@ -1,0 +1,13 @@
+---
+
+- hosts: pwd
+
+  tasks:
+  - name: "Update Debian packages"
+    command: apt-get update
+    when: ansible_os_family == "Debian"
+      
+  - name: "Update Alpine packages"
+    command: apk update
+    when: ansible_os_family == "Alpine"
+
