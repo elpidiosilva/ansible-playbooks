@@ -1,0 +1,16 @@
+---
+
+- hosts: pwd
+
+  tasks:
+  - name: "Copia um arquivo do controler para os hosts manipulados"
+    copy:
+       src: /root/somefile.txt
+       dest: /root/somefile.txt
+       remote_src: no
+       
+  - name: "Copia um arquivo para outro local dentro dos hosts manipulados"
+    copy:
+       src: /root/somefile.txt
+       dest: /tmp/somefile_local.txt
+       remote_src: yes
