@@ -1,0 +1,7 @@
+Crie um arquivo de inventario com 4 hosts do play with docker, e no quinto host (node control) execute um playbook que faça:
+- Crie um arquivo de texto dentro do host remoto com as permissões 644.
+- Crie uma pasta no host remoto e configure suas permissões para 755.
+
+Para mais info:
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/file_module.html
+

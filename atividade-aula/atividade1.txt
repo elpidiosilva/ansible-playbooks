@@ -1,0 +1,5 @@
+Crie um arquivo de inventario com 4 hosts do play with docker, e no quinto host (node control) execute um playbook que faça:
+- update no cache apk somente se o sistema for um alpine
+- update no cache apt, somente se o sistema for Debian.
+
+Para mais info: https://docs.ansible.com/ansible/2.3/playbooks_conditionals.html

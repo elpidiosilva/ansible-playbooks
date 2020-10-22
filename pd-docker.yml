@@ -1,0 +1,10 @@
+---
+- name: docker
+  hosts: pwd 
+
+  tasks:
+  - name: ubuntu
+    community.general.docker_container:
+      name: sleepy
+      image: ubuntu:14.04
+      command: ["sleep", "infinity"]

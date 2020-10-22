@@ -1,0 +1,12 @@
+Crie um arquivo de inventario com um grupo [webserver] com 3 hosts e outro grupo [ubuntu] com 1 host, e no quinto host (node control) execute um playbook que faça:
+- No grupo [ubuntu], execute o container da imagem do ubuntu:latest com qualquer comando
+- No grupo [webserver], execute um container nginx:latest expondo a porta 8080 (após fazer isso, uma porta se abrirá na interface web do play with docker, com um link para a página inicial do container)
+
+Exemplo de utilização do módulo (community - galaxy):
+- name: Start a container with a command
+  community.general.docker_container:
+    name: sleepy
+    image: ubuntu:14.04
+    command: ["sleep", "infinity"]
+
+Para mais info: https://docs.ansible.com/ansible/latest/collections/community/general/docker_container_module.html
