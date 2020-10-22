@@ -1,0 +1,30 @@
+---
+
+- hosts: banco
+
+  tasks:
+  - name: "Sobe o container com um comando especifico"
+    community.general.docker_container:
+       name: db
+       image: postgres:latest
+
+  - name: "Lista os containers executando no host"
+    command: docker ps
+    register: mycmd_out
+
+  - debug: var=mycmd_out.stdout_lines
+
+- hosts: nginx
+
+  tasks:
+  - name: "Sobe o container com Webserver"
+    community.general.docker_container:
+       name: nginx-web
+       image: nginx:latest
+       published_ports: "8081:80"
+
+  - name: "Lista os containers executando no host"
+    command: docker ps
+    register: mycmd_out
+
+  - debug: var=mycmd_out.stdout_lines
