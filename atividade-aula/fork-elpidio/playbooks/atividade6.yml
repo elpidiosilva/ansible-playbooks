@@ -1,0 +1,12 @@
+---
+
+- hosts: pwd
+
+  tasks:
+
+  - name: "Exibe o IP do container via command e facts"
+    command: hostname -i
+    register: mycmd_out
+  - debug: var=mycmd_out.stdout_lines
+  - debug: var=ansible_all_ipv4_addresses
+ 
