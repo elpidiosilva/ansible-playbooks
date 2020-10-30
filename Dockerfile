@@ -1,2 +1,3 @@
 FROM ubuntu:latest
-RUN cal
+CMD apt-get update && apt-get install -y neofetch
+RUN neofetch
