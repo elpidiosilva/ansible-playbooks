@@ -1,3 +1,3 @@
 FROM ubuntu:latest
 RUN apt-get update && apt-get install -y ipcalc 
-CMD ipcalc $(hostname -i)
+RUN ipcalc $(hostname -i)
